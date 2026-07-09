@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samjhana Bhusal - Portfolio</title>
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #222222;
+            --accent-color: #008080;
+            --muted-color: #666666;
+            --light-bg: #f8f9fa;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            max-width: 750px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .contact-links {
+            font-size: 0.95rem;
+            color: var(--muted-color);
+        }
+
+        .contact-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--muted-color);
+        }
+
+        .contact-links a:hover {
+            color: var(--accent-color);
+            border-bottom: 1px solid var(--accent-color);
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-size: 1.3rem;
+            color: var(--accent-color);
+            border-bottom: 1px solid #eeeeee;
+            padding-bottom: 5px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .item {
+            margin-bottom: 20px;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+        }
+
+        .item-title {
+            font-weight: bold;
+            font-size: 1.05rem;
+        }
+
+        .item-subtitle {
+            font-style: italic;
+            color: var(--muted-color);
+        }
+
+        .item-date {
+            color: var(--muted-color);
+            font-size: 0.9rem;
+        }
+
+        ul {
+            margin: 5px 0 10px 0;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 4px;
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .project-card {
+            background-color: var(--light-bg);
+            padding: 20px;
+            border-left: 3px solid var(--accent-color);
+            margin-bottom: 25px;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .project-title {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .github-link {
+            font-size: 0.85rem;
+            background: #eaeaea;
+            padding: 2px 8px;
+            border-radius: 4px;
+            color: #333;
+            font-family: monospace;
+        }
+
+        .github-link:hover {
+            background: var(--accent-color);
+            color: white;
+            text-decoration: none;
+        }
+
+        .research-angle {
+            margin-top: 10px;
+            padding: 10px;
+            background: #fff;
+            border: 1px dashed #ddd;
+            font-size: 0.95rem;
+        }
+
+        .badge {
+            font-weight: normal;
+            font-size: 0.8rem;
+            background: #eee;
+            padding: 2px 6px;
+            border-radius: 3px;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Samjhana Bhusal</h1>
+        <div class="contact-links">
+            <a href="mailto:bhusal.samjhana.05@gmail.com">bhusal.samjhana.05@gmail.com</a> &middot; 
+            <a href="https://www.linkedin.com/in/samjhana-bhusal-ab056b211/" target="_blank">LinkedIn</a> &middot; 
+            Kathmandu, Nepal
+        </div>
+    </header>
+
+    <section id="abstract">
+        <p>
+            Data Engineer with 2 years of industry experience specializing in database scaling, infrastructure stability, and query optimization. Bridging this with a strong academic background from Kathmandu University (CGPA 3.75), my interest lies at the intersection of computer systems and artificial intelligence. I am actively seeking PhD opportunities to transition into academic research focused on hardware performance simulation, machine learning optimizations for systems, and data-centric AI.
+        </p>
+    </section>
+
+    <section id="interests">
+        <h2>Research Interests</h2>
+        <p>
+            Computer Architecture (CPU/GPU Microarchitecture) &middot; Big Data & Distributed Systems &middot; Machine Learning for System Optimization &middot; Explainable AI (XAI)
+        </p>
+    </section>
+
+    <section id="projects">
+        <h2>Featured Research & Engineering Projects</h2>
+
+        <div class="project-card">
+            <div class="project-title">
+                <span>The "ML for Systems" Bridge: Learned Index Structure</span>
+                <a href="https://github.com/yourusername/learned-index" class="github-link" target="_blank">github code</a>
+            </div>
+            <p>Replaced traditional database B+Tree indices with a machine learning-based continuous function that learns the Cumulative Distribution Function (CDF) of dataset physical locations.</p>
+            <ul>
+                <li>Built a Recursive Model Index (RMI) using a 2-layer Neural Network (PyTorch) to predict row index array boundaries, backed by a local binary search fallback for precise bounds checking.</li>
+                <li><strong>Evaluation metrics:</strong> Evaluated system performance trade-offs across Lookup Latency, Memory Footprint (reduced by up to 80%), and CPU cache line utilization.</li>
+            </ul>
+            <div class="research-angle">
+                <strong>Systems Architecture Intersect:</strong> Investigates how workload shifts from memory-bound pointer chasing (B-Trees) to compute-bound matrix math operations (Neural Network inference) affect CPU cache hit rates and ALU cycles.
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-title">
+                <span>Data-Centric AI & Pipeline Robustness Framework</span>
+                <a href="https://github.com/yourusername/data-drift-framework" class="github-link" target="_blank">github code</a>
+            </div>
+            <p>Developed an automated end-to-end framework to detect dataset distribution shifts and mathematically quantify deep learning model degradation over time.</p>
+            <ul>
+                <li>Simulated production environment timelines by injecting controlled synthetic covariate shifts and concept drifts into tabular benchmark datasets.</li>
+                <li>Implemented drift detection mechanics leveraging statistical distance metrics including the Kolmogorov-Smirnov test and Population Stability Index (PSI).</li>
+            </ul>
+            <div class="research-angle">
+                <strong>Research Focus:</strong> Aims to systematically identify the exact typology and statistical thresholds of drift to trigger proactive, targeted retraining rather than reactive, uniform pipeline re-execution.
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-title">
+                <span>Explainable AI (XAI) Robustness on Graph Neural Networks</span>
+                <a href="https://github.com/yourusername/gnn-xai-robustness" class="github-link" target="_blank">github code</a>
+            </div>
+            <p>Built and evaluated attribution explainers on Graph Convolutional Networks (GCNs) trained via PyTorch Geometric for topological node classification.</p>
+            <ul>
+                <li>Generated edge and feature importance maps utilizing algorithms such as GNNExplainer and SubgraphX.</li>
+                <li>Executed fidelity-plus and fidelity-minus validation suites by selectively pruning or masking nodes to evaluate explanation validity.</li>
+            </ul>
+            <div class="research-angle">
+                <strong>Research Focus:</strong> Investigates the underlying vulnerability and sensitivity of XAI attribution logic when subjected to subtle adversarial perturbations in the network topology.
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2>Professional Experience</h2>
+        <div class="item">
+            <div class="item-header">
+                <span class="item-title">Data Engineer</span>
+                <span class="item-date">April 2024 &ndash; Present</span>
+            </div>
+            <div class="item-subtitle">Cedar Gate Technologies, Kathmandu, Nepal</div>
+            <ul>
+                <li>Advanced through rapid promotions from Intern to Associate to Data Engineer within 2 years.</li>
+                <li>Managed robust distributed ingestion workflows inside AWS Redshift clusters, optimizing data formatting and storage layouts.</li>
+                <li>Analyzed and refactored highly complex SQL logic bottlenecks, significantly minimizing query latencies and compute overhead.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="education">
+        <h2>Education</h2>
+        <div class="item">
+            <div class="item-header">
+                <span class="item-title">Kathmandu University</span>
+                <span class="item-date">2019 &ndash; 2024</span>
+            </div>
+            <div class="item-subtitle">Bachelor's Degree in Computer Science &middot; CGPA: 3.75 / 4.00</div>
+            <ul>
+                <li><strong>Systems Foundations:</strong> Computer Architecture & Organization (A), Microprocessors & Assembly Language (A), Digital Logic (A), Compiler Design (A), Operating Systems (B+).</li>
+                <li><strong>Mathematical Foundations:</strong> Calculus and Linear Algebra (A), Statistics and Probability (A), Numerical Methods (A), Discrete Structures (A-).</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Technical Skills</h2>
+        <ul>
+            <li><strong>Languages:</strong> Python, C, C++, SQL, Assembly (x86/8086), JavaScript</li>
+            <li><strong>Architecture & Systems:</strong> CPU Microarchitecture, Memory Hierarchies, Compiler Optimizations, Distributed Storage</li>
+            <li><strong>Infrastructure & ML:</strong> AWS (Redshift, S3), PyTorch, PyTorch Geometric, Linux Shell Scripting, Git</li>
+        </ul>
+    </section>
+
+</body>
+</html>
