@@ -1,276 +1,581 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Samjhana Bhusal - Portfolio</title>
-    <style>
-        :root {
-            --bg-color: #ffffff;
-            --text-color: #222222;
-            --accent-color: #008080;
-            --muted-color: #666666;
-            --light-bg: #f8f9fa;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Samjhana Bhusal — Systems &amp; ML Research</title>
+<meta name="description" content="Samjhana Bhusal — Data Engineer bridging database systems and machine learning research.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F4F5F1;
+    --paper-line:rgba(20,24,22,0.055);
+    --ink:#191C1A;
+    --ink-soft:#565B57;
+    --ink-faint:#8A8F8A;
+    --accent:#2B6E64;
+    --accent-soft:rgba(43,110,100,0.10);
+    --accent-line:rgba(43,110,100,0.35);
+    --hairline:rgba(25,28,26,0.13);
+    --paper-elev:#FBFBF9;
+    --radius:3px;
+    --maxw:800px;
+  }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--bg-color);
-            max-width: 750px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
 
-        header {
-            margin-bottom: 40px;
-            text-align: center;
-        }
+  body{
+    margin:0;
+    background-color:var(--paper);
+    background-image:
+      repeating-linear-gradient(0deg, var(--paper-line) 0px, var(--paper-line) 1px, transparent 1px, transparent 32px),
+      repeating-linear-gradient(90deg, var(--paper-line) 0px, var(--paper-line) 1px, transparent 1px, transparent 32px);
+    color:var(--ink);
+    font-family:'IBM Plex Serif', Georgia, 'Times New Roman', serif;
+    font-size:16.5px;
+    line-height:1.68;
+    -webkit-font-smoothing:antialiased;
+  }
 
-        h1 {
-            font-size: 2.2rem;
-            margin-bottom: 8px;
-            font-weight: 700;
-        }
+  .wrap{
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:64px 28px 40px;
+  }
 
-        .contact-links {
-            font-size: 0.95rem;
-            color: var(--muted-color);
-        }
+  a{ color:var(--accent); text-decoration:none; border-bottom:1px solid var(--accent-line); }
+  a:hover{ border-bottom-color:var(--accent); }
 
-        .contact-links a {
-            color: var(--text-color);
-            text-decoration: none;
-            border-bottom: 1px dotted var(--muted-color);
-        }
+  *:focus-visible{
+    outline:2px solid var(--accent);
+    outline-offset:3px;
+  }
 
-        .contact-links a:hover {
-            color: var(--accent-color);
-            border-bottom: 1px solid var(--accent-color);
-        }
+  .mono{ font-family:'IBM Plex Mono', ui-monospace, Menlo, Consolas, monospace; }
 
-        section {
-            margin-bottom: 40px;
-        }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--accent);
+    font-weight:600;
+    margin:0 0 10px;
+  }
 
-        h2 {
-            font-size: 1.3rem;
-            color: var(--accent-color);
-            border-bottom: 1px solid #eeeeee;
-            padding-bottom: 5px;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
+  /* ---------- Masthead ---------- */
+  .masthead{
+    display:grid;
+    grid-template-columns:auto 1fr;
+    gap:26px;
+    align-items:start;
+    padding-bottom:34px;
+    border-bottom:1px solid var(--hairline);
+    margin-bottom:34px;
+  }
 
-        .item {
-            margin-bottom: 20px;
-        }
+  .portrait-slot{
+    width:92px; height:92px; flex:none;
+    position:relative;
+  }
+  .portrait{
+    width:92px; height:92px;
+    border-radius:50%;
+    object-fit:cover;
+    border:1px solid var(--hairline);
+    box-shadow:0 0 0 4px var(--paper), 0 0 0 5px var(--accent-line);
+    display:block;
+  }
+  .portrait-fallback{
+    display:none;
+    width:92px; height:92px;
+    border-radius:50%;
+    background:var(--ink);
+    color:var(--paper);
+    align-items:center;
+    justify-content:center;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:26px;
+    letter-spacing:0.05em;
+    box-shadow:0 0 0 4px var(--paper), 0 0 0 5px var(--accent-line);
+  }
 
-        .item-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            flex-wrap: wrap;
-        }
+  h1{
+    font-size:2.15rem;
+    font-weight:600;
+    margin:0 0 6px;
+    letter-spacing:-0.01em;
+  }
+  .tagline{
+    margin:0;
+    color:var(--ink-soft);
+    font-style:italic;
+    font-size:1.02rem;
+    max-width:52ch;
+  }
 
-        .item-title {
-            font-weight: bold;
-            font-size: 1.05rem;
-        }
+  .spec-table{
+    margin:22px 0 0;
+    display:grid;
+    grid-template-columns:repeat(3, minmax(0,1fr));
+    border:1px solid var(--hairline);
+    border-radius:var(--radius);
+    overflow:hidden;
+    background:var(--paper-elev);
+  }
+  .spec-row{
+    padding:11px 16px;
+    border-bottom:1px solid var(--hairline);
+    border-right:1px solid var(--hairline);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+  }
+  .spec-table .spec-row:nth-child(3n){ border-right:none; }
+  .spec-table .spec-row:nth-last-child(-n+3){ border-bottom:none; }
+  .spec-row dt{
+    color:var(--ink-faint);
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    font-size:10.5px;
+    margin:0 0 4px;
+  }
+  .spec-row dd{ margin:0; color:var(--ink); font-size:12.5px; }
+  .spec-row a{ border-bottom:1px solid var(--accent-line); }
 
-        .item-subtitle {
-            font-style: italic;
-            color: var(--muted-color);
-        }
+  /* ---------- Sections ---------- */
+  section{ margin-bottom:52px; }
 
-        .item-date {
-            color: var(--muted-color);
-            font-size: 0.9rem;
-        }
+  .section-head{
+    display:flex;
+    align-items:baseline;
+    gap:12px;
+    margin-bottom:18px;
+  }
+  .section-head h2{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    text-transform:uppercase;
+    letter-spacing:0.14em;
+    color:var(--ink);
+    margin:0;
+    font-weight:600;
+  }
+  .section-head .rule{
+    flex:1;
+    height:1px;
+    background:var(--hairline);
+  }
 
-        ul {
-            margin: 5px 0 10px 0;
-            padding-left: 20px;
-        }
+  .abstract p{ margin:0; color:var(--ink); }
 
-        li {
-            margin-bottom: 4px;
-        }
+  .pill-row{
+    display:flex; flex-wrap:wrap; gap:8px;
+  }
+  .pill{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    padding:5px 11px;
+    border:1px solid var(--hairline);
+    border-radius:20px;
+    color:var(--ink-soft);
+    background:var(--paper-elev);
+  }
 
-        a {
-            color: var(--accent-color);
-            text-decoration: none;
-        }
+  /* ---------- Projects ---------- */
+  .project{
+    border:1px solid var(--hairline);
+    border-radius:var(--radius);
+    background:var(--paper-elev);
+    padding:26px 26px 24px;
+    margin-bottom:22px;
+    opacity:0;
+    transform:translateY(10px);
+    transition:opacity .6s ease, transform .6s ease;
+  }
+  .project.in-view{ opacity:1; transform:translateY(0); }
 
-        a:hover {
-            text-decoration: underline;
-        }
+  .project-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:16px;
+    flex-wrap:wrap;
+    margin-bottom:6px;
+  }
+  .project-title-row{
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .channel-tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    font-weight:600;
+    color:var(--accent);
+    border:1px solid var(--accent-line);
+    background:var(--accent-soft);
+    padding:2px 7px;
+    border-radius:3px;
+    letter-spacing:0.04em;
+  }
+  .project-title{
+    font-family:'IBM Plex Serif', serif;
+    font-weight:600;
+    font-size:1.16rem;
+    margin:0;
+  }
+  .repo-link{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    color:var(--ink);
+    background:var(--paper);
+    border:1px solid var(--hairline);
+    padding:5px 10px;
+    border-radius:3px;
+    white-space:nowrap;
+    border-bottom:1px solid var(--hairline);
+  }
+  .repo-link:hover{
+    color:var(--accent);
+    border-color:var(--accent-line);
+  }
+  .repo-link::before{ content:"↗ "; }
 
-        .project-card {
-            background-color: var(--light-bg);
-            padding: 20px;
-            border-left: 3px solid var(--accent-color);
-            margin-bottom: 25px;
-            border-radius: 0 4px 4px 0;
-        }
+  .project-lede{
+    color:var(--ink-soft);
+    margin:8px 0 14px;
+    font-size:0.98rem;
+  }
 
-        .project-title {
-            font-weight: bold;
-            font-size: 1.1rem;
-            margin-bottom: 5px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+  .project ul{
+    margin:0;
+    padding-left:18px;
+    font-size:0.93rem;
+    color:var(--ink);
+  }
+  .project li{ margin-bottom:7px; }
+  .project li strong{ font-family:'IBM Plex Mono', monospace; font-size:0.85em; font-weight:600; }
 
-        .github-link {
-            font-size: 0.85rem;
-            background: #eaeaea;
-            padding: 2px 8px;
-            border-radius: 4px;
-            color: #333;
-            font-family: monospace;
-        }
+  .research-angle{
+    margin-top:14px;
+    padding:11px 13px;
+    border-left:2px solid var(--accent);
+    background:var(--accent-soft);
+    font-size:0.88rem;
+    color:var(--ink);
+    border-radius:0 3px 3px 0;
+  }
+  .research-angle .rl{
+    display:block;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10.5px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--accent);
+    margin-bottom:4px;
+    font-weight:600;
+  }
 
-        .github-link:hover {
-            background: var(--accent-color);
-            color: white;
-            text-decoration: none;
-        }
+  /* ---------- Experience / Education ---------- */
+  .item{ margin-bottom:22px; }
+  .item:last-child{ margin-bottom:0; }
+  .item-head{
+    display:flex; justify-content:space-between; align-items:baseline; gap:14px; flex-wrap:wrap;
+  }
+  .item-title{ font-weight:600; font-size:1.02rem; }
+  .item-date{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    color:var(--ink-faint);
+    white-space:nowrap;
+  }
+  .item-sub{ color:var(--accent); font-style:italic; font-size:0.94rem; margin:2px 0 8px; }
+  .item ul{ margin:0; padding-left:18px; font-size:0.93rem; }
+  .item li{ margin-bottom:5px; }
 
-        .research-angle {
-            margin-top: 10px;
-            padding: 10px;
-            background: #fff;
-            border: 1px dashed #ddd;
-            font-size: 0.95rem;
-        }
+  .coursework{
+    margin-top:10px;
+    display:grid;
+    grid-template-columns:1fr;
+    gap:6px;
+  }
+  .course-group{
+    font-size:0.88rem;
+    display:flex;
+    gap:8px;
+  }
+  .course-group .g-label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10px;
+    text-transform:uppercase;
+    letter-spacing:0.07em;
+    color:var(--ink-faint);
+    min-width:118px;
+    flex:none;
+    padding-top:2px;
+  }
 
-        .badge {
-            font-weight: normal;
-            font-size: 0.8rem;
-            background: #eee;
-            padding: 2px 6px;
-            border-radius: 3px;
-            margin-left: 5px;
-        }
-    </style>
+  /* ---------- Skills ---------- */
+  .skills-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:18px;
+  }
+  .skill-col .g-label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10.5px;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    color:var(--accent);
+    margin-bottom:9px;
+    font-weight:600;
+  }
+  .skill-col .pill-row .pill{ background:var(--paper); }
+
+  /* ---------- Footer ---------- */
+  footer{
+    border-top:1px solid var(--hairline);
+    padding-top:22px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:10px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    color:var(--ink-faint);
+  }
+  footer a{ color:var(--ink-soft); border-bottom:1px solid var(--hairline); }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:640px){
+    .wrap{ padding:40px 18px 30px; }
+    .masthead{ grid-template-columns:1fr; }
+    .spec-table{ grid-template-columns:1fr; }
+    .spec-table .spec-row{ border-right:none; }
+    .spec-table .spec-row:nth-last-child(-n+2){ border-bottom:1px solid var(--hairline); }
+    .spec-table .spec-row:last-child{ border-bottom:none; }
+    .project-body{ grid-template-columns:1fr; }
+    .skills-grid{ grid-template-columns:1fr; }
+    h1{ font-size:1.7rem; }
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    html{ scroll-behavior:auto; }
+    .project{ transition:none; opacity:1; transform:none; }
+    .trace{ transition:none !important; stroke-dashoffset:0 !important; }
+  }
+</style>
 </head>
 <body>
 
-    <header>
-        <h1>Samjhana Bhusal</h1>
-        <div class="contact-links">
-            <a href="mailto:bhusal.samjhana.05@gmail.com">bhusal.samjhana.05@gmail.com</a> &middot; 
-            <a href="https://www.linkedin.com/in/samjhana-bhusal-ab056b211/" target="_blank">LinkedIn</a> &middot; 
-            Kathmandu, Nepal
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="portrait-slot">
+      <!-- TODO: replace src below with your hosted profile photo URL -->
+      <img class="portrait" id="portrait-img" src="https://github.com/samjhana-bhusal/samjhana/blob/main/profile.jpeg" alt="Portrait of Samjhana Bhusal" onerror="document.getElementById('portrait-img').style.display='none'; document.getElementById('portrait-fallback').style.display='flex';">
+      <div class="portrait-fallback" id="portrait-fallback">SB</div>
+    </div>
+
+    <div>
+      <p class="eyebrow">Data Engineer - AI/ML Researcher</p>
+      <h1>Samjhana Bhusal</h1>
+      <p class="tagline">Bridging database internals and machine learning — measuring where the two actually meet.</p>
+
+      <dl class="spec-table">
+        <div class="spec-row"><dt>Location</dt><dd>Kathmandu, Nepal</dd></div>
+        <div class="spec-row"><dt>Focus</dt><dd>Computer Architecture · Data-Centric AI · XAI</dd></div>
+        <div class="spec-row"><dt>Contact</dt><dd><a href="mailto:bhusal.samjhana.05@gmail.com">Email</a> · <a href="https://www.linkedin.com/in/samjhana-bhusal-ab056b211/" target="_blank" rel="noopener">LinkedIn</a></dd></div>
+      </dl>
+    </div>
+  </header>
+
+  <section class="abstract">
+    <div class="section-head"><h2>Abstract</h2><div class="rule"></div></div>
+    <p>
+      Data Engineer with two years of industry experience specializing in database scaling, infrastructure stability, and query optimization. Bridging this with a strong academic background from Kathmandu University (CGPA 3.75), my interest lies at the intersection of computer systems and artificial intelligence. I am actively seeking PhD opportunities to move into academic research focused on hardware performance simulation, machine learning optimizations for systems, and data-centric AI.
+    </p>
+  </section>
+
+  <section class="interests">
+    <div class="section-head"><h2>Research Interests</h2><div class="rule"></div></div>
+    <div class="pill-row">
+      <span class="pill">Computer Architecture (CPU/GPU)</span>
+      <span class="pill">Big Data &amp; Distributed Systems</span>
+      <span class="pill">ML for System Optimization</span>
+      <span class="pill">Explainable AI (XAI)</span>
+      <span class="pill">Data-Centric AI</span>
+    </div>
+  </section>
+
+  <section class="projects">
+    <div class="section-head"><h2>Featured Research</h2><div class="rule"></div></div>
+
+    <!-- Project 1: Learned Index -->
+    <article class="project">
+      <div class="project-top">
+        <div class="project-title-row">
+          <span class="channel-tag mono">CH.01</span>
+          <h3 class="project-title">Hybrid Learned Index (RMI) vs. B+Tree</h3>
         </div>
-    </header>
+        <a class="repo-link" href="https://github.com/samjhana-bhusal/sql-indexing-with-rmi" target="_blank" rel="noopener">sql-indexing-with-rmi</a>
+      </div>
+      <p class="project-lede">Replaces a degree-optimized C++ B+Tree with a two-stage Recursive Model Index backed by an LSM-style delta buffer, shifting lookups from memory-bound pointer-chasing to cache-friendly arithmetic.</p>
 
-    <section id="abstract">
-        <p>
-            Data Engineer with 2 years of industry experience specializing in database scaling, infrastructure stability, and query optimization. Bridging this with a strong academic background from Kathmandu University (CGPA 3.75), my interest lies at the intersection of computer systems and artificial intelligence. I am actively seeking PhD opportunities to transition into academic research focused on hardware performance simulation, machine learning optimizations for systems, and data-centric AI.
-        </p>
-    </section>
+      <ul>
+        <li>10M-row lognormal benchmark: <strong>334.71&nbsp;MB</strong> B+Tree footprint reduced to <strong>117.97&nbsp;KB</strong> — a 99.96% reduction.</li>
+        <li>Read throughput scales from 4.74&nbsp;MQPS to <strong>14.91&nbsp;MQPS</strong>, a 3.14× improvement, by fitting the model within L2 cache.</li>
+        <li>Real-time inserts sustained at 0.0230&nbsp;μs/write via the delta buffer, with read latency degrading predictably as it fills.</li>
+        <li>GPU batch sweep (MPS) identifies a throughput sweet spot at <strong>batch&nbsp;=&nbsp;512</strong> (2.72 MQPS).</li>
+      </ul>
 
-    <section id="interests">
-        <h2>Research Interests</h2>
-        <p>
-            Computer Architecture (CPU/GPU Microarchitecture) &middot; Big Data & Distributed Systems &middot; Machine Learning for System Optimization &middot; Explainable AI (XAI)
-        </p>
-    </section>
+      <div class="research-angle">
+        <span class="rl">Systems intersect</span>
+        Investigates how shifting workloads from memory-bound pointer chasing to compute-bound inference changes CPU cache hit rates and instruction throughput.
+      </div>
+    </article>
 
-    <section id="projects">
-        <h2>Featured Research & Engineering Projects</h2>
-
-        <div class="project-card">
-            <div class="project-title">
-                <span>The "ML for Systems" Bridge: Learned Index Structure</span>
-                <a href="https://github.com/yourusername/learned-index" class="github-link" target="_blank">github code</a>
-            </div>
-            <p>Replaced traditional database B+Tree indices with a machine learning-based continuous function that learns the Cumulative Distribution Function (CDF) of dataset physical locations.</p>
-            <ul>
-                <li>Built a Recursive Model Index (RMI) using a 2-layer Neural Network (PyTorch) to predict row index array boundaries, backed by a local binary search fallback for precise bounds checking.</li>
-                <li><strong>Evaluation metrics:</strong> Evaluated system performance trade-offs across Lookup Latency, Memory Footprint (reduced by up to 80%), and CPU cache line utilization.</li>
-            </ul>
-            <div class="research-angle">
-                <strong>Systems Architecture Intersect:</strong> Investigates how workload shifts from memory-bound pointer chasing (B-Trees) to compute-bound matrix math operations (Neural Network inference) affect CPU cache hit rates and ALU cycles.
-            </div>
+    <!-- Project 2: Drift-Lab -->
+    <article class="project">
+      <div class="project-top">
+        <div class="project-title-row">
+          <span class="channel-tag mono">CH.02</span>
+          <h3 class="project-title">Drift-Lab: Proactive Drift Detection &amp; Conformal Mitigation</h3>
         </div>
+        <a class="repo-link" href="https://github.com/samjhana-bhusal/drift-lab" target="_blank" rel="noopener">drift-lab</a>
+      </div>
+      <p class="project-lede">A statistical hypothesis cascade (KS, MMD, Sinkhorn optimal transport) classifies distribution shift into a formal taxonomy, then routes each type to a cost-minimal, decision-theoretic remedy instead of blanket retraining.</p>
 
-        <div class="project-card">
-            <div class="project-title">
-                <span>Data-Centric AI & Pipeline Robustness Framework</span>
-                <a href="https://github.com/yourusername/data-drift-framework" class="github-link" target="_blank">github code</a>
-            </div>
-            <p>Developed an automated end-to-end framework to detect dataset distribution shifts and mathematically quantify deep learning model degradation over time.</p>
-            <ul>
-                <li>Simulated production environment timelines by injecting controlled synthetic covariate shifts and concept drifts into tabular benchmark datasets.</li>
-                <li>Implemented drift detection mechanics leveraging statistical distance metrics including the Kolmogorov-Smirnov test and Population Stability Index (PSI).</li>
-            </ul>
-            <div class="research-angle">
-                <strong>Research Focus:</strong> Aims to systematically identify the exact typology and statistical thresholds of drift to trigger proactive, targeted retraining rather than reactive, uniform pipeline re-execution.
-            </div>
+      <ul>
+        <li>Classifies drift as covariate, concept, prior-probability, or full dataset shift, each mapped to a distinct remedy — re-weighting, active learning, threshold recalibration, or retraining.</li>
+        <li>Non-exchangeable weighted conformal prediction holds coverage near the <strong>90%</strong> nominal target (α = 0.10) as standard conformal bounds fall below 70% under shift.</li>
+        <li>Synthetic drift injected on the UCI Credit Card dataset across baselines: Deep MLP, TabNet, and XGBoost.</li>
+        <li>Targeted remediation lowers maintenance compute by <strong>40–60%</strong> versus global retraining.</li>
+      </ul>
+
+      <div class="research-angle">
+        <span class="rl">Research focus</span>
+        Aims to identify the exact typology and statistical threshold of a drift event, so pipelines trigger proactive, targeted intervention rather than reactive full retraining.
+      </div>
+    </article>
+
+    <!-- Project 3: GNN XAI -->
+    <article class="project">
+      <div class="project-top">
+        <div class="project-title-row">
+          <span class="channel-tag mono">CH.03</span>
+          <h3 class="project-title">GNN Explainability Under Topological Perturbation</h3>
         </div>
+        <a class="repo-link" href="https://github.com/samjhana-bhusal/gnn-explain-robustness" target="_blank" rel="noopener">gnn-explain-robustness</a>
+      </div>
+      <p class="project-lede">Benchmarks GNNExplainer, Subgraph MCTS, and counterfactual explanations on a GCN under adversarial edge perturbations, and introduces an explanation-guided defense and a homophily-based attribution metric.</p>
 
-        <div class="project-card">
-            <div class="project-title">
-                <span>Explainable AI (XAI) Robustness on Graph Neural Networks</span>
-                <a href="https://github.com/yourusername/gnn-xai-robustness" class="github-link" target="_blank">github code</a>
-            </div>
-            <p>Built and evaluated attribution explainers on Graph Convolutional Networks (GCNs) trained via PyTorch Geometric for topological node classification.</p>
-            <ul>
-                <li>Generated edge and feature importance maps utilizing algorithms such as GNNExplainer and SubgraphX.</li>
-                <li>Executed fidelity-plus and fidelity-minus validation suites by selectively pruning or masking nodes to evaluate explanation validity.</li>
-            </ul>
-            <div class="research-angle">
-                <strong>Research Focus:</strong> Investigates the underlying vulnerability and sensitivity of XAI attribution logic when subjected to subtle adversarial perturbations in the network topology.
-            </div>
+      <ul>
+        <li>On Cora, Subgraph MCTS holds <strong>0.68</strong> Jaccard similarity at 10% edge perturbation versus <strong>0.31</strong> for GNNExplainer — connected-subgraph search is structurally more stable than gradient-based masking.</li>
+        <li>Proposes an <strong>XAI Sparsifier</strong>: pruning low-attribution edges to filter adversarial noise and restore classification accuracy.</li>
+        <li>Introduces the Homophily Attribution Index to quantify how far an explanation drifts toward cross-class edges under attack.</li>
+        <li>Fidelity-plus/minus evaluated across all three explanation paradigms on a two-layer GCN (81.30% test accuracy).</li>
+      </ul>
+
+      <div class="research-angle">
+        <span class="rl">Research focus</span>
+        Investigates the vulnerability of XAI attribution logic under subtle, adversarial changes to graph topology.
+      </div>
+    </article>
+  </section>
+
+  <section class="experience">
+    <div class="section-head"><h2>Professional Experience</h2><div class="rule"></div></div>
+    <div class="item">
+      <div class="item-head">
+        <span class="item-title">Data Engineer</span>
+        <span class="item-date">Apr 2024 — Present</span>
+      </div>
+      <p class="item-sub">Cedar Gate Technologies, Kathmandu, Nepal</p>
+      <ul>
+        <li>Advanced through rapid promotions from Intern to Associate to Data Engineer within two years.</li>
+        <li>Managed distributed ingestion workflows inside AWS Redshift clusters, optimizing data formatting and storage layout.</li>
+        <li>Analyzed and refactored complex SQL logic bottlenecks, meaningfully reducing query latency and compute overhead.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="education">
+    <div class="section-head"><h2>Education</h2><div class="rule"></div></div>
+    <div class="item">
+      <div class="item-head">
+        <span class="item-title">Kathmandu University</span>
+        <span class="item-date">2019 — 2024</span>
+      </div>
+      <p class="item-sub">B.E. Computer Science · CGPA 3.75 / 4.00</p>
+      <div class="coursework">
+        <div class="course-group">
+          <span class="g-label">Systems</span>
+          <span>Computer Architecture &amp; Organization (A), Microprocessors &amp; Assembly (A), Digital Logic (A), Compiler Design (A), Operating Systems (B+)</span>
         </div>
-    </section>
-
-    <section id="experience">
-        <h2>Professional Experience</h2>
-        <div class="item">
-            <div class="item-header">
-                <span class="item-title">Data Engineer</span>
-                <span class="item-date">April 2024 &ndash; Present</span>
-            </div>
-            <div class="item-subtitle">Cedar Gate Technologies, Kathmandu, Nepal</div>
-            <ul>
-                <li>Advanced through rapid promotions from Intern to Associate to Data Engineer within 2 years.</li>
-                <li>Managed robust distributed ingestion workflows inside AWS Redshift clusters, optimizing data formatting and storage layouts.</li>
-                <li>Analyzed and refactored highly complex SQL logic bottlenecks, significantly minimizing query latencies and compute overhead.</li>
-            </ul>
+        <div class="course-group">
+          <span class="g-label">Mathematics</span>
+          <span>Calculus &amp; Linear Algebra (A), Statistics &amp; Probability (A), Numerical Methods (A), Discrete Structures (A-)</span>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <section id="education">
-        <h2>Education</h2>
-        <div class="item">
-            <div class="item-header">
-                <span class="item-title">Kathmandu University</span>
-                <span class="item-date">2019 &ndash; 2024</span>
-            </div>
-            <div class="item-subtitle">Bachelor's Degree in Computer Science &middot; CGPA: 3.75 / 4.00</div>
-            <ul>
-                <li><strong>Systems Foundations:</strong> Computer Architecture & Organization (A), Microprocessors & Assembly Language (A), Digital Logic (A), Compiler Design (A), Operating Systems (B+).</li>
-                <li><strong>Mathematical Foundations:</strong> Calculus and Linear Algebra (A), Statistics and Probability (A), Numerical Methods (A), Discrete Structures (A-).</li>
-            </ul>
+  <section class="skills">
+    <div class="section-head"><h2>Technical Skills</h2><div class="rule"></div></div>
+    <div class="skills-grid">
+      <div class="skill-col">
+        <div class="g-label">Languages</div>
+        <div class="pill-row">
+          <span class="pill">Python</span><span class="pill">C</span><span class="pill">C++</span>
+          <span class="pill">SQL</span><span class="pill">x86 ASM</span><span class="pill">JavaScript</span>
         </div>
-    </section>
+      </div>
+      <div class="skill-col">
+        <div class="g-label">Architecture &amp; Systems</div>
+        <div class="pill-row">
+          <span class="pill">CPU Microarchitecture</span><span class="pill">Memory Hierarchies</span>
+          <span class="pill">Compiler Optimization</span><span class="pill">Distributed Storage</span>
+        </div>
+      </div>
+      <div class="skill-col">
+        <div class="g-label">Infra &amp; ML</div>
+        <div class="pill-row">
+          <span class="pill">AWS Redshift</span><span class="pill">AWS S3</span><span class="pill">PyTorch</span>
+          <span class="pill">PyG</span><span class="pill">Linux / Shell</span><span class="pill">Git</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <section id="skills">
-        <h2>Technical Skills</h2>
-        <ul>
-            <li><strong>Languages:</strong> Python, C, C++, SQL, Assembly (x86/8086), JavaScript</li>
-            <li><strong>Architecture & Systems:</strong> CPU Microarchitecture, Memory Hierarchies, Compiler Optimizations, Distributed Storage</li>
-            <li><strong>Infrastructure & ML:</strong> AWS (Redshift, S3), PyTorch, PyTorch Geometric, Linux Shell Scripting, Git</li>
-        </ul>
-    </section>
+  <footer>
+    <span>Samjhana Bhusal — Kathmandu, Nepal</span>
+    <span><a href="mailto:bhusal.samjhana.05@gmail.com">bhusal.samjhana.05@gmail.com</a> · <a href="https://www.linkedin.com/in/samjhana-bhusal-ab056b211/" target="_blank" rel="noopener">LinkedIn</a></span>
+  </footer>
+
+</div>
+
+<script>
+  // Reveal project cards on scroll into view
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('in-view');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.project').forEach(function(card){
+    if(reduceMotion){ card.classList.add('in-view'); }
+    io.observe(card);
+  });
+</script>
 
 </body>
 </html>
