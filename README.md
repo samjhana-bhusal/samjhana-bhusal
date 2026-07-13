@@ -37,16 +37,6 @@
 * 🌐 **GNN Explainability Under Adversarial Perturbations**  
   *Investigating the robustness of Graph Neural Network explainers against adversarial graph topology attacks.*
 
----
-
-## 📊 GitHub Analytics
-
-<p align="center">
-  <img height="175" src="https://github-readme-stats.vercel.app/api?username=samjhana-bhusal&show_icons=true&hide_border=true&title_color=008080&icon_color=008080&text_color=555555&bg_color=ffffff" alt="Samjhana's GitHub stats" />
-  <img height="175" src="https://github-readme-stats.vercel.app/api/top-langs/?username=samjhana-bhusal&layout=compact&hide_border=true&title_color=008080&text_color=555555&bg_color=ffffff" alt="Top Languages" />
-</p>
-
----
 
 ## 🌐 Connect With Me
 
