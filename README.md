@@ -1,106 +1,66 @@
 # Hi, I'm Samjhana Bhusal 👋
 
-I'm a Data Engineer with a strong interest in **Computer Architecture**, **Machine Learning for Systems**, and **Distributed Data Systems**. My long-term goal is to pursue a PhD where I can work on building intelligent computer systems that combine hardware, compilers, and machine learning.
+**Data Engineer • Aspiring PhD Researcher • Computer Architecture & ML for Systems**
 
-## Research Interests
-
-* Computer Architecture (CPU/GPU Microarchitecture)
-* Machine Learning for Systems
-* Performance Modeling
-* Compiler Optimization
-* Big Data & Distributed Systems
-* Explainable AI
-* Data Reliability under Distribution Shift
-
-## About Me
-
-* 🎓 B.Sc. in Computer Science, Kathmandu University (CGPA: **3.75/4.00**)
-* 💼 Data Engineer at Cedar Gate Technologies
-* 🔬 Interested in hardware-aware machine learning and performance optimization
-* 🌱 Currently learning computer architecture simulation and ML-driven systems research
-* 🎯 Preparing for PhD applications in Computer Architecture and Systems
-
-## Technical Skills
-
-**Languages**
-
-* Python
-* C
-* C++
-* SQL
-* Assembly (x86/8086)
-* JavaScript
-
-**Systems**
-
-* CPU Microarchitecture
-* Memory Hierarchies
-* Compiler Optimization
-* Parallel Processing
-
-**Data Engineering**
-
-* AWS Redshift
-* Amazon S3
-* ETL Pipelines
-* Distributed Storage
-
-**Tools**
-
-* Linux
-* Git
-* PyTorch
-* DBeaver
-* Jira
-
-## Research Projects
-
-### Hybrid Learned Index (RMI) vs. B+Tree
-
-* Implemented a two-stage Recursive Model Index in C++
-* Benchmarked against a B+Tree on 10 million records
-* Achieved **99.96% memory reduction**
-* Achieved **3.14× read throughput improvement**
-* Explored GPU-parallel batch lookup using Apple Silicon MPS
-
-Repository:
-
-* https://github.com/samjhana-bhusal/sql-indexing-with-rmi
+Building reliable data systems today while exploring the future of intelligent computer architecture.
 
 ---
 
-### Drift-Lab: Proactive Data Drift Detection
+### 🚀 Research Interests
 
-* Built a statistical pipeline combining KS, MMD, and Sinkhorn Optimal Transport
-* Designed adaptive mitigation using weighted conformal prediction
-* Evaluated Deep MLP, TabNet, and XGBoost under distribution shift
-
-Repository:
-
-* https://github.com/samjhana-bhusal/drift-lab
+* 🖥️ Computer Architecture
+* ⚡ High-Performance Systems
+* 🤖 Machine Learning for Systems
+* 📊 Distributed Data Systems
+* 🔍 Explainable AI
 
 ---
 
-### GNN Explainability Under Topological Perturbation
+### 💻 Tech Stack
 
-* Studied robustness of graph explanation methods
-* Compared GNNExplainer, Subgraph MCTS, and counterfactual explanations
-* Proposed explanation-guided pruning against adversarial attacks
-
-Repository:
-
-* https://github.com/samjhana-bhusal/gnn-explain-robustness
-
-## Publications
-
-Currently working toward research publications.
-
-## Connect With Me
-
-* 🌐 Website: https://samjhanabhusal.com.np
-* 💼 LinkedIn: https://linkedin.com/in/samjhana-bhusal-ab056b211
-* 📧 Email: [bhusal.samjhana.05@gmail.com](mailto:bhusal.samjhana.05@gmail.com)
+<p align="left">
+<img src="https://skillicons.dev/icons?i=python,cpp,c,linux,git,pytorch,aws,mysql,postgresql,bash,vscode" />
+</p>
 
 ---
 
-> *"Building intelligent computer systems by combining machine learning with computer architecture."*
+### 📌 Featured Projects
+
+* 🧠 **Hybrid Learned Index (RMI) vs B+Tree**
+* 📈 **Drift-Lab: Data Drift Detection**
+* 🌐 **GNN Explainability Under Adversarial Perturbations**
+
+---
+
+### 📊 GitHub
+
+<p align="center">
+<img height="170" src="https://github-readme-stats.vercel.app/api?username=samjhana-bhusal&show_icons=true&hide_border=true&rank_icon=github"/>
+<img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=samjhana-bhusal&layout=compact&hide_border=true"/>
+</p>
+
+<p align="center">
+<img src="https://streak-stats.demolab.com?user=samjhana-bhusal&hide_border=true"/>
+</p>
+
+---
+
+### 🌐 Connect
+
+<p align="left">
+<a href="https://samjhanabhusal.com.np">
+<img src="https://img.shields.io/badge/Website-008080?style=for-the-badge&logo=google-chrome&logoColor=white"/>
+</a>
+
+<a href="https://www.linkedin.com/in/samjhana-bhusal-ab056b211">
+<img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/>
+</a>
+
+<a href="mailto:bhusal.samjhana.05@gmail.com">
+<img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white"/>
+</a>
+</p>
+
+---
+
+> *"Building intelligent systems at the intersection of machine learning and computer architecture."*
