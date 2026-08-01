@@ -415,6 +415,29 @@
   <section class="projects">
     <div class="section-head"><h2>Featured Research</h2><div class="rule"></div></div>
 
+    <!-- Project 3: semopt -->
+    <article class="project">
+      <div class="project-top">
+        <div class="project-title-row">
+          <span class="channel-tag mono">CH.00</span>
+          <h3 class="project-title">semopt: Cost-Optimal Query Engine for LLM Semantic Operators</h3>
+        </div>
+        <a class="repo-link" href="https://github.com/samjhana-bhusal/semopt" target="_blank" rel="noopener">semopt</a>
+      </div>
+      <p class="project-lede">A confidence cascade routes each row of a semantic query through cheap&rarr;expensive LLM tiers, escalating only when the cheap model is unsure &mdash; where the escalation threshold is derived by weighted conformal calibration to meet a user-specified accuracy target, not hand-tuned.</p>
+
+      <ul>
+        <li>Executes SQL-style semantic operators (filter, map, extract, join, rank) over unstructured text, each predicate evaluated by an LLM; a cost-based optimizer reorders predicates by cost&times;selectivity, pushes filters down, and memoizes duplicate calls.</li>
+        <li>Weighted conformal calibration derives per-tier escalation thresholds with a finite-sample coverage guarantee, holding empirical accuracy within <strong>&plusmn;3%</strong> of the nominal 1&minus;&alpha; target across &alpha; &isin; {0.05, 0.10, 0.20}.</li>
+        <li>Meets a <strong>90%</strong> accuracy target at <strong>~16%</strong> of naive strongest-model cost, while a hand-tuned FrugalGPT-style baseline overshoots the target and overpays.</li>
+        <li>Evaluated against baselines B0&ndash;B5 on a controlled synthetic workload with a known difficulty structure; 100+ unit and property-based (Hypothesis) tests, fully reproducible via <code>make full</code>.</li>
+      </ul>
+
+      <div class="research-angle">
+        <span class="rl">Research focus</span>
+        Turns the cost&ndash;accuracy tradeoff in LLM data processing into a guarantee: derive the cheapest model cascade that provably meets a user's stated accuracy target, rather than hand-tuning confidence thresholds after the fact.
+      </div>
+    </article>
     <!-- Project 1: Learned Index -->
     <article class="project">
       <div class="project-top">
