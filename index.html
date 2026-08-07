@@ -438,29 +438,7 @@
         Turns the cost&ndash;accuracy tradeoff in LLM data processing into a guarantee: derive the cheapest model cascade that provably meets a user's stated accuracy target, rather than hand-tuning confidence thresholds after the fact.
       </div>
     </article>
-    <!-- Project 1: Learned Index -->
-    <article class="project">
-      <div class="project-top">
-        <div class="project-title-row">
-          <span class="channel-tag mono">CH.01</span>
-          <h3 class="project-title">Hybrid Learned Index (RMI) vs. B+Tree</h3>
-        </div>
-        <a class="repo-link" href="https://github.com/samjhana-bhusal/sql-indexing-with-rmi" target="_blank" rel="noopener">sql-indexing-with-rmi</a>
-      </div>
-      <p class="project-lede">Replaces a degree-optimized C++ B+Tree with a two-stage Recursive Model Index backed by an LSM-style delta buffer, shifting lookups from memory-bound pointer-chasing to cache-friendly arithmetic.</p>
-
-      <ul>
-        <li>10M-row lognormal benchmark: <strong>334.71&nbsp;MB</strong> B+Tree footprint reduced to <strong>117.97&nbsp;KB</strong> — a 99.96% reduction.</li>
-        <li>Read throughput scales from 4.74&nbsp;MQPS to <strong>14.91&nbsp;MQPS</strong>, a 3.14× improvement, by fitting the model within L2 cache.</li>
-        <li>Real-time inserts sustained at 0.0230&nbsp;μs/write via the delta buffer, with read latency degrading predictably as it fills.</li>
-        <li>GPU batch sweep (MPS) identifies a throughput sweet spot at <strong>batch&nbsp;=&nbsp;512</strong> (2.72 MQPS).</li>
-      </ul>
-
-      <div class="research-angle">
-        <span class="rl">Systems intersect</span>
-        Investigates how shifting workloads from memory-bound pointer chasing to compute-bound inference changes CPU cache hit rates and instruction throughput.
-      </div>
-    </article>
+  
 
     <!-- Project 2: Drift-Lab -->
     <article class="project">
